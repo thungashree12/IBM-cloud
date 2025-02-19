@@ -1,0 +1,21 @@
+import streamlit as st
+import requests
+import json
+
+st.title("Remote Work and Virtual Desktops with IBM Cloud")
+
+# User input fields
+user_name = st.text_input("Enter User Name", "John Doe")
+resource_action = st.selectbox("Action", ["Provision Desktop", "Revoke Access", "Monitor Status"]) 
+
+# IBM Cloud API endpoint (Replace with actual endpoint)
+IBM_CLOUD_API_URL = "https://cloud.ibm.com/v1/provision-vdi"
+
+# IBM Cloud API Key (Replace with actual API key)
+IBM_CLOUD_API_KEY = "your_ibm_cloud_api_key"
+
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {IBM_CLOUD_API_KEY}"
+}
+
