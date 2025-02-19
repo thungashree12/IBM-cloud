@@ -1,0 +1,20 @@
+# Monitoring Section
+st.header("Resource Monitoring")
+st.metric(label="Active Desktops", value=15, delta=3)
+st.write("Active Desktops metric displayed")  # Debug log
+st.metric(label="CPU Usage", value="68%", delta="-4%")
+st.write("CPU Usage metric displayed")  # Debug log
+st.metric(label="Network Latency", value="115ms", delta="-5ms")
+st.write("Network Latency metric displayed")  # Debug log
+
+# Security Section
+st.header("Security Logs")
+st.text("Multi-Factor Authentication Enabled")
+st.write("Displayed Multi-Factor Authentication status")  # Debug log
+st.text("Latest Security Patch: Applied")
+st.write("Displayed Latest Security Patch status")  # Debug log
+
+# Additional Monitoring Actions
+st.header("System Performance Metrics")
+st.text("Analyzing system logs and security compliance...")
+st.write("Displayed system performance monitoring details")  # Debug log
