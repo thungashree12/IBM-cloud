@@ -1,0 +1,16 @@
+if st.button("Submit"):
+    if user_name.strip():
+        payload = {"user": user_name, "action": resource_action}
+        st.write(f"Sending request with payload: {json.dumps(payload, indent=2)}")  # Debug log
+        try:
+            response = requests.post(IBM_CLOUD_API_URL, headers=headers, json=payload)
+            st.write(f"Response Status Code: {response.status_code}")  # Debug log
+            st.write(f"Response Content: {response.text}")  # Debug log
+            response.raise_for_status()
+            st.success(f"Action '{resource_action}' performed successfully for user {user_name}.")
+        except requests.exceptions.RequestException as e:
+            st.error(f"Failed to perform action: {e}")
+            st.write(f"Request failed with error: {e}")  # Debug log
+    else:
+        st.error("User name cannot be empty.")
+        st.write("Error: User name input is empty")  # Debug log
